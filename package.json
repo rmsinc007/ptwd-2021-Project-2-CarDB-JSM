@@ -1,0 +1,25 @@
+{
+  "name": "Project_2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmsinc007/ptwd-2021-Project-2-CarDB-JSM.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmsinc007/ptwd-2021-Project-2-CarDB-JSM/issues"
+  },
+  "homepage": "https://github.com/rmsinc007/ptwd-2021-Project-2-CarDB-JSM#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.1.1",
+    "moongoose": "^0.0.5"
+  }
+}
