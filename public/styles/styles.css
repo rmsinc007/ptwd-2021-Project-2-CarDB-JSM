@@ -1,0 +1,23 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: grey;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aqua;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo {
+  width: 150px;
+  margin-right: 1rem;
+}
