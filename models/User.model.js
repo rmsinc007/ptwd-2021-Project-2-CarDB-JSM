@@ -7,10 +7,10 @@ const userSchema = new Schema({
   username: {
     type: String,
     required: true,
-    unique: true
+    unique: true,
   },
-  phone: { type: String, required: true }
-  city:  { type: String, required: true }
+  phone: { type: String, required: true },
+  city:  { type: String, required: true },
   state: { type: String, required: true }
 });
 
