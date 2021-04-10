@@ -1,28 +1,10 @@
 const nhtsa = require('nhtsa');
 
-// Example using async/await
-(async () => {
-    const { data } = await nhtsa.decodeVin('WUAAU34248N006164');
-   
-    console.log(data);
-  })();
+// GET Request.
+fetch('https://vpic.nhtsa.dot.gov/api/vehicles')
+    // Handle success
+    .then(response => response.json())  // convert to json
+    .then(json => console.log(json))    //print data to console
+    .catch(err => console.log('Request Failed', err)); // Catch errors
 
-class NHTSA {
-    static get URL_BASE() {
-      return 'https://vpic.nhtsa.dot.gov/api/vehicles';
-    }
-
-  
-  
-  
-  
-  
-  
-    app.get('/cars',  (req, res) => {
-    carAPI
-    .getCars()
-    .then(carsFromApi => {
-     res.render('cars', {carList: carsFromApi}); 
-    })
-    .catch(error => console.log(error));
- });
+    
