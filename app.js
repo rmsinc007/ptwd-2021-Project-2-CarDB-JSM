@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const hbs = require('hbs');
 const path = require('path');
+const cookieParser = require('cookie-parser');
 
 //User authentication
 const router = require('express').Router();
