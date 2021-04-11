@@ -9,12 +9,13 @@ router.get("/signup", (req, res, next) => {
 
 router.post('/signup',(req, res, next) => {
     const {email, passord} = req.body;
-    if(email === "" || password === "") {
-        res.render("/signup");
+    if (email === "" || password === "") {
+      console.log({ email,password });
+      res.render("auth/signup", {errorMessage: 'All the fields are mandatory'});
     } else {
       const hashedPassword = bcrypt.hashSync(password, 10);
       Login.create({ email, password: hashedPassword }).then((userFromDB) => {
-         console.log(userFromDB);
+         res.render('profile');
       });
     }
 });
