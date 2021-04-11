@@ -157,6 +157,7 @@ app.use(express.static(path.join(__dirname,'public')));
 
 
 //Routes
+
 app.get('/', (req,res) =>{
 
     res.render('login');
@@ -169,6 +170,11 @@ app.get('/add', (req, res) =>{
     res.render("signup");
     console.log('Add car!');
 });
+
+// const auth = require('.routes/auth.routes');
+// app.use('/', authRoutes);
+    
+
 
 app.listen(3000, ()=>console.log('🏃‍ on port 3000'));
 
