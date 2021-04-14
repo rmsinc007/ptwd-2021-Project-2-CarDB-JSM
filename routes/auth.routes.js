@@ -14,8 +14,18 @@ router.post('/signup',(req, res, next) => {
       res.render("auth/signup", {errorMessage: 'All the fields are mandatory'});
     } else {
       const hashedPassword = bcrypt.hashSync(password, 10);
-      Login.create({ email, password: hashedPassword }).then((userFromDB) => {
-         res.render('profile');
+      Login.create({ email, password: hashedPassword })
+        .then((userFromDB) => {
+          res.render('profile');
+        })
+        .catch((err) => {
+          if (err.code === 11000) {
+              res.render("auth/signup" , { 
+                  errorMessage: 'user with that email already exists',
+              });
+          }  else {
+             next(err);
+          }
       });
     }
 });

@@ -13,4 +13,4 @@ const loginModel = Schema ({
     },
 });
 
-module.exports = model("Login")
+module.exports = model("Login", loginModel);
