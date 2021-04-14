@@ -4,7 +4,7 @@ const router  = express.Router();
 /*GET home page */
 router.get("/", (req, res, next) => {
     console.log(req.query);
-    res.render("index");
+    res.render("login");
 });
 
 module.exports = router;

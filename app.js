@@ -21,6 +21,9 @@ const User = require('./models/User-model');
 const shouldNotBeLoggedIn = require("./middlewares/shouldNotBeLoggedIn");
 const isLoggedIn = require("./middlewares/isLoggedIn");
 
+const index = require('./routes/index.routes');
+app.use('/',index);
+
 router.get('/signup', shouldNotBeLoggedIn, (req, res) => {
   res.render('auth/signup');
 });
@@ -146,7 +149,9 @@ router.get("/logout", isLoggedIn, (req, res) => {
     res.redirect("/");
   });
 });
-  
+
+router.get("/");
+
 module.exports = router;
 //end of authorization
 
@@ -158,7 +163,7 @@ app.use(express.static(path.join(__dirname,'public')));
 
 //Routes
 
-app.get('/', (req,res) =>{
+/* app.get('/', (req,res) =>{
 
     res.render('login');
     console.log('Hello World');
@@ -169,7 +174,7 @@ app.get('/add', (req, res) =>{
 
     res.render("signup");
     console.log('Add car!');
-});
+}); */
 
 // const auth = require('.routes/auth.routes');
 // app.use('/', authRoutes);
