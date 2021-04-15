@@ -9,7 +9,7 @@ nav ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: aqua;
+  background-color: rgb(25, 69, 69);
 }
 
 nav a {
