@@ -170,7 +170,7 @@ app.use(express.static(path.join(__dirname,'public')));
 
 });
 
-app.get('/add', (req, res) =>{
+app.get('/signup', (req, res) =>{
 
     res.render("signup");
     console.log('Add car!');
