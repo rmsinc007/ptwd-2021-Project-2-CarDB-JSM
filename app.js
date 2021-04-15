@@ -24,6 +24,8 @@ const isLoggedIn = require("./middlewares/isLoggedIn");
 const index = require('./routes/index.routes');
 app.use('/',index);
 
+router.get('/vacc-info');
+
 router.get('/signup', shouldNotBeLoggedIn, (req, res) => {
   res.render('auth/signup');
 });
