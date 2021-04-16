@@ -24,7 +24,17 @@ const isLoggedIn = require("./middlewares/isLoggedIn");
 const index = require('./routes/index.routes');
 app.use('/',index);
 
-router.get('/vacc-info');
+const vaccInfo = require('./routes/vacc-Info.routes');
+app.use('/',vaccInfo);
+
+const infections = require('./routes/infections.routes');
+app.use('/', infections);
+
+const news = require('./routes/covid-news.routes');
+app.use('/', news);
+
+const support = require('./routes/support.routes');
+app.use('/', support);
 
 router.get('/signup', shouldNotBeLoggedIn, (req, res) => {
   res.render('auth/signup');
@@ -153,6 +163,8 @@ router.get("/logout", isLoggedIn, (req, res) => {
 });
 
 router.get("/");
+
+router.get("/vacc-info")
 
 module.exports = router;
 //end of authorization

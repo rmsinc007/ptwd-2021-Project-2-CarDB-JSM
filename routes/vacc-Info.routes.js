@@ -5,3 +5,5 @@ const router = express.Router();
 router.get('/vacc-info', (req,res,next)=>{
     res.render("vaccine-info");
 });
+
+module.exports = router;

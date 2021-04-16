@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const {Schema, model} = mongoose.Schema;
 
 const vehicleSchema = new Schema({
   make: { type: String, required: true },
