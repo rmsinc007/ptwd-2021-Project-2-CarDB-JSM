@@ -2,7 +2,7 @@
 
 const newsInput     = document.querySelector('#news-article');
 const getNewsButton = document.querySelector('#get-news-button');
-const covidNews     = document.querySelector('news-article');
+const covidNews     = document.querySelector('#news-article');
 
 import axios from "axios";
 
