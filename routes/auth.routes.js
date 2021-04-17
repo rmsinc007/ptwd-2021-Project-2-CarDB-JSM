@@ -8,7 +8,7 @@ router.get("/", (req, res, next) => {
 });
 
 router.post('/signup',(req, res, next) => {
-    const {email, passord} = req.body;
+    const {email, password} = req.body;
     if (email === "" || password === "") {
       console.log({ email,password });
       res.render("signup", {errorMessage: 'All the fields are mandatory'});
