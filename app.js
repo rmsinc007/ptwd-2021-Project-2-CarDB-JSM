@@ -21,6 +21,7 @@ const User = require('./models/User-model');
 const shouldNotBeLoggedIn = require("./middlewares/shouldNotBeLoggedIn");
 const isLoggedIn = require("./middlewares/isLoggedIn");
 
+//Routes
 const index = require('./routes/index.routes');
 app.use('/',index);
 
@@ -36,8 +37,17 @@ app.use('/', news);
 const support = require('./routes/support.routes');
 app.use('/', support);
 
+const signup = require('./routes/signup.routes');
+app.use('/', signup);
+  
+router.get("/login", shouldNotBeLoggedIn, (req, res) => {
+  res.render("auth/login");
+});
+
+
+/*Sign Up Page*/
 router.get('/signup', shouldNotBeLoggedIn, (req, res) => {
-  res.render('auth/signup');
+  res.render('auth/signupaccount');
 });
 
 router.post("/signup", shouldNotBeLoggedIn, (req, res) => {
@@ -46,11 +56,11 @@ router.post("/signup", shouldNotBeLoggedIn, (req, res) => {
   if (!username) {
     return res
       .status(400)
-      .render("auth/signup", { errorMessage: "Please provide your username." });
+      .render("auth/signupaccount", { errorMessage: "Please provide your username." });
   }
   
   if (password.length < 8) {
-    return res.status(400).render("auth/signup", {
+    return res.status(400).render("auth/signupaccount", {
       errorMessage: "Your password needs to be at least 8 characters long.",
     });
   }
@@ -61,7 +71,7 @@ router.post("/signup", shouldNotBeLoggedIn, (req, res) => {
     if (found) {
       return res
         .status(400)
-        .render("auth/signup", { errorMessage: "Username already taken." });
+        .render("auth/signupaccount", { errorMessage: "Username already taken." });
     }
   
     // if user is not found, create a new user - start with hashing the password
@@ -84,25 +94,22 @@ router.post("/signup", shouldNotBeLoggedIn, (req, res) => {
         if (error instanceof mongoose.Error.ValidationError) {
           return res
             .status(400)
-            .render("auth/signup", { errorMessage: error.message });
+            .render("auth/signupaccount", { errorMessage: error.message });
         }
         if (error.code === 11000) {
-          return res.status(400).render("auth/signup", {
+          return res.status(400).render("auth/signupaccount", {
             errorMessage:
               "Username needs to be unique. The username you chose is already in use.",
           });
         }
         return res
           .status(500)
-          .render("auth/signup", { errorMessage: error.message });
+          .render("auth/signupaccount", { errorMessage: error.message });
       });
   });
 });
-  
-router.get("/login", shouldNotBeLoggedIn, (req, res) => {
-  res.render("auth/login");
-});
-  
+
+
 router.post("/login", shouldNotBeLoggedIn, (req, res, next) => {
   const { username, password } = req.body;
   
@@ -162,9 +169,6 @@ router.get("/logout", isLoggedIn, (req, res) => {
   });
 });
 
-router.get("/");
-
-router.get("/vacc-info")
 
 module.exports = router;
 //end of authorization
