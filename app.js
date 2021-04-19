@@ -39,6 +39,12 @@ app.use('/', support);
 
 const signup = require('./routes/signup.routes');
 app.use('/', signup);
+
+//for Post route
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+
+
   
 router.get("/login", shouldNotBeLoggedIn, (req, res) => {
   res.render("auth/login");
