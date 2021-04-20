@@ -17,11 +17,28 @@ const saltRounds = 10;
 //Require the User model in order to interact with the DB
 const User = require('./models/User-model');
 
+//Require the Post model
+const Post = require('./models/Posts.model');
+
 // Require necessary middlewares in order to control access to specific routes
 const shouldNotBeLoggedIn = require("./middlewares/shouldNotBeLoggedIn");
 const isLoggedIn = require("./middlewares/isLoggedIn");
 
+//needed middleware to communicate with POST requests
+const bodyParser = require('body-parser');
+//Use Body Parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+//we may also want to consider express-validator
+
+// Set covidPosts db
+require('./covidPosts-db');
+
 //Routes
+const posts = require('./routes/posts.routes');
+app.use('/',posts);
+
 const index = require('./routes/index.routes');
 app.use('/',index);
 
@@ -39,10 +56,6 @@ app.use('/', support);
 
 const signup = require('./routes/signup.routes');
 app.use('/', signup);
-
-//for Post route
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
 
 
   
