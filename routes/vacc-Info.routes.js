@@ -15,13 +15,13 @@ router.get('/vacc-info', (req,res,next)=>{
         }
     };
 
-    axios.request(options).then(function (response) {
-        console.log(response.data);
+    axios.request(options).then( vaccineData => {
+        console.log(vaccineData.data);
+        res.render("vaccine-info", vaccineData.data);
     }).catch(function (error) {
         console.error(error);
     });
 
-    res.render("vaccine-info");
 });
 
 module.exports = router;
