@@ -36,8 +36,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 require('./covidPosts-db');
 
 //Routes
-const posts = require('./routes/posts.routes');
-app.use('/',posts);
+// const posts = require('./routes/posts.routes');
+// app.use('/',posts);
 
 const index = require('./routes/index.routes');
 app.use('/',index);

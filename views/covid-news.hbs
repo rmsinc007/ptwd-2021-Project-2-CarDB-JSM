@@ -4,8 +4,13 @@ COVID19 News
     <li>
         <input type"text" id="news-article">
         <button id="get-news-button">get COVID news</button>
-        <h3 id="Covid News"></h3>
-        <img id="news-image" alt="" srcset="">
+        <h3 id="article-name-h3"> {{$title}} </h3>
+
+        <a href="" id="link">
+            <button>Click to read</button>
+        </a>
+
+        <img id="news-image" alt="" href={{$image}}> </img>
 
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="/js/api.js"></script>
