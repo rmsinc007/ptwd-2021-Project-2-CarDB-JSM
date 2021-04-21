@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const researcherName = require('../utils/vacc-info.utils')
 
 //route for vaccine-info.hbs
 router.get('/vacc-info', (req,res,next)=>{
@@ -17,7 +18,8 @@ router.get('/vacc-info', (req,res,next)=>{
 
     axios.request(options).then( vaccineData => {
         console.log(vaccineData.data);
-        res.render("vaccine-info", vaccineData.data);
+        const developerResearch = researcherName.getDeveloperResearcher(vaccineData.data[0].developerResearcher)
+        res.render("vaccine-info", {developerResearch});
     }).catch(function (error) {
         console.error(error);
     });
