@@ -3,7 +3,7 @@ const router = express.Router();
 
 //route for infections rate
 router.get('/infections', (req,res,next)=>{
-    res.render('infections');
+    res.render('profile');
 });
 
 module.exports = router;

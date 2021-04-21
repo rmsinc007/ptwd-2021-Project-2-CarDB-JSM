@@ -3,9 +3,16 @@ Infections page
 <body>
     <li>
         <input type"text" id="news-article">
-        <button id="get-news-button">get INFECTIONS news</button>
-        <h3 id="Infections News"></h3>
-        <img id="news-image" alt="" srcset="">
+        <button id="get-infection-button">get INFECTIONS news</button>
+        <div class="news">
+            <h3 id="article-name-h3"> {{$title}} </h3>
+
+            <a href="" id="link">
+                <button>Click to read</button>
+            </a>
+        </div>
+
+        <img id="news-image" alt="" href={{$image}}> </img>
 
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <script src="/js/api.js"></script>
