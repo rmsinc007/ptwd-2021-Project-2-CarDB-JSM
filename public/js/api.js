@@ -4,6 +4,9 @@ const covidNews     = document.querySelector('#news-article');
 const articleImage  = document.querySelector('#news-image');
 const articleNameH3 = document.querySelector('#article-name-h3');
 const articleLink   = document.querySelector('#link');
+const newsDiv = document.querySelector('.news')
+
+
 
 // NEWS API KEY 
 const options = {
@@ -34,7 +37,7 @@ getNewsButton.addEventListener( "click", () => {
     }
   };
   axios.request(options).then(function (response) {
-    // console.log(response.data.news.title);
+    console.log(response.data.news);
     // console.log(response[0]);
     const { title, link } = response.data.news[0];
     // [...response.data].forEach((title,index) => {
@@ -42,8 +45,16 @@ getNewsButton.addEventListener( "click", () => {
     //   console.log(title)
     // })
     // const title = response.data.news[0].title;
-    articleNameH3.innerText = title;
-    articleLink.href = link; 
+    response.data.news.map((eachNews)=>{
+      let row = document.createElement('div')
+      row.innerHTML=`<h3 id="article-name-h3"> ${eachNews.title} </h3>
+
+       <a href=${eachNews.link} target="_blank" id="link">
+           <button>Click to read</button>
+      </a>`
+      newsDiv.appendChild(row);
+    })
+    
     // image.src = image;
     console.log(link)
     res.render("covid-news")
