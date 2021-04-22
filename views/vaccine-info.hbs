@@ -1,18 +1,21 @@
 <div class="container">
     <div class="left-section">
-        hello
+
     </div>
     <div class="center-section">
-        <h1 class="h1-Vacc-Info">FDA Approved Vaccines</h1>
-        
-            <ul>
-                <li>
-                    {{developerResearch}}
-                </li>
-            </ul>
-      
+        <h1 class="h1-Vacc-Info">FDA Approved and Non-FDA-Approved Vaccines</h1>
+
+        {{#each this}}
+        <h3>
+            {{name}}
+        </h3>
+        <a href={{url}} target="_blank">
+            <button>Read More</button>
+        </a>
+        <button>Save Article</button>
+        {{/each}}
     </div>
     <div class="right-section">
-        world
+
     </div>
-</div>>
+</div>

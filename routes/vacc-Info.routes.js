@@ -17,9 +17,11 @@ router.get('/vacc-info', (req,res,next)=>{
     };
 
     axios.request(options).then( vaccineData => {
-        console.log(vaccineData.data);
-        const developerResearch = researcherName.getDeveloperResearcher(vaccineData.data[0].developerResearcher)
-        res.render("vaccine-info", {developerResearch});
+        //console.log(vaccineData.data);
+        const arrVaccines = researcherName.getDeveloperResearcher(vaccineData.data);
+        //const developerResearch = researcherName.getDeveloperResearcher(vaccineData.data[0].developerResearcher)
+        res.render("vaccine-info", arrVaccines); //{developerResearch}
+        //console.log("done!");
     }).catch(function (error) {
         console.error(error);
     });
