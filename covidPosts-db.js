@@ -2,7 +2,7 @@
 const mongoose = require("mongoose");
 assert = require("assert");
 
-const url = "mongodb://localhost/covidPosts-db";
+const url = "mongodb+srv://teamptwd:password123!@cluster0.liopm.mongodb.net/teamCovidDB?retryWrites=true&w=majority";
 mongoose.Promise = global.Promise;
 mongoose.connect(
   url,
