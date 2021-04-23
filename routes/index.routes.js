@@ -1,5 +1,8 @@
 const express = require("express");
 const router  = express.Router();
+// const session = require("express-session");
+const User   = require("../models/login.model.js");
+const bcrypt  = require("bcryptjs");
 
 /*GET home page */
 router.get("/", (req, res, next) => {
@@ -26,7 +29,7 @@ router.post("/login", async (req, res, next) => {
           // email matches something => [{ email: dasdas, pass: dsda }]
           // doesn't match => []
           if (userArrFromDB.length === 0) {
-            res.render("auth/login", {
+            res.render("profile", {
               errorMessage: "User does not exist in the DB",
             });
           } else {
@@ -36,7 +39,7 @@ router.post("/login", async (req, res, next) => {
               userArrFromDB[0].password
             );
             if (!passwordMatch) {
-              res.render("auth/login", {
+              res.render("profile", {
                 errorMessage: "Auth does not match",
               });
             } else {
