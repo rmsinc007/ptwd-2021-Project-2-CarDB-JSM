@@ -1,6 +1,5 @@
-<h1> Welcome to your Account! </h1>
 
-<div class="row">
+{{!-- <div class="row">
   <div class="col-sm-4 col-sm-offset-4">
     <form action="/posts/new" method="post">
       <legend>New Post</legend>
@@ -33,4 +32,29 @@
       <br>
     </form>
   </div>
+</div> --}}
+
+<div class="container">
+
+  <div class="left-section">
+
+  </div>
+  <div class="center-section">
+
+    <h1> Welcome to your Account! </h1>
+    <form action="/post" method="POST">
+      <input type="text" name="title">
+      <input type="text" name="url">
+      <textarea name="summary" rows="6" cols="50"></textarea>
+      <button>Submit Post</button>
+    </form>
+
+
+  </div>
+  <div class="right-section">
+
+  </div>
+
 </div>
+
+

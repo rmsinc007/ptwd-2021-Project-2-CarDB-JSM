@@ -57,6 +57,9 @@ app.use('/', support);
 const signup = require('./routes/signup.routes');
 app.use('/', signup);
 
+const userPost = require('./routes/posts.routes');
+app.use('/', userPost);
+
 
   
 router.get("/login", shouldNotBeLoggedIn, (req, res) => {
