@@ -25,11 +25,12 @@ router.post("/login", async (req, res, next) => {
       // findOne will return the first match against your query from the DB
       User.find({ email })
         .then((userArrFromDB) => {
+            console.log(userArrFromDB)
           //  no user with such email -> show error
           // email matches something => [{ email: dasdas, pass: dsda }]
           // doesn't match => []
           if (userArrFromDB.length === 0) {
-            res.render("profile", {
+            res.render("login", {
               errorMessage: "User does not exist in the DB",
             });
           } else {
@@ -39,13 +40,13 @@ router.post("/login", async (req, res, next) => {
               userArrFromDB[0].password
             );
             if (!passwordMatch) {
-              res.render("profile", {
+              res.render("login", {
                 errorMessage: "Auth does not match",
               });
             } else {
-              userArrFromDB[0].password = "";
-              req.session.user = userArrFromDB[0];
-              // find user redirect to profile
+            //   userArrFromDB[0].password = "";
+            //   req.session.User = userArrFromDB[0];
+            //   // find user redirect to profile
               res.render("profile");
             }
           }
@@ -55,7 +56,7 @@ router.post("/login", async (req, res, next) => {
   });
   
   router.get("/logout", (req, res, next) => {
-    req.session.destroy();
+    // req.session.destroy();
     res.redirect("/");
   });
 
