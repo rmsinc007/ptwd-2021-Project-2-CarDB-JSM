@@ -5,7 +5,7 @@ const Post = require('../models/Posts.model');
 //route for posts
 
 // CREATE
-router.post("/posts", (req, res) => {
+router.post("/post", (req, res) => {
       // INSTANTIATE INSTANCE OF POST MODEL
     /* const post = new Post(req.body);
 
