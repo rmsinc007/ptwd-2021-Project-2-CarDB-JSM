@@ -199,7 +199,7 @@ app.use(express.static(path.join(__dirname,'public')));
 
 
 
+let port = process.env.PORT || 3000 ;
 
-
-app.listen(3000, ()=>console.log('🏃‍ on port 3000'));
+app.listen(port, ()=>console.log('🏃‍ on port 3000'));
 
