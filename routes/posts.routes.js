@@ -7,15 +7,24 @@ const Post = require('../models/Posts.model');
 // CREATE
 router.post("/post", (req, res, next) => {
   Post.create({
-    title: req.body.postTitle,
-    // url: req.body.postUrl,
-    // summary: req.body.summaryContent
+    title: req.body.title,
+    url: req.body.url,
+    summary: req.body.summary
   }).then(() => {
-    res.redirect('/profile');
+    const sucessMessage = {message: "You have posted successfully!"}
+    res.render('profile' , sucessMessage);
   }).catch((err) => {
     console.log(err);
   });
 });
+
+router.get('/post', (req, res, next) => {
+  Post.find().then((bunchaPosts) => {
+    console.log(bunchaPosts)
+    res.render('profile', { post: bunchaPosts });
+  });
+});
+
 
 // app.post('/delete-cat/:idofcat', (req, res, next) => {
 //   const id = req.params.idofcat;
