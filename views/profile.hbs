@@ -1,39 +1,4 @@
 
-{{!-- <div class="row">
-  <div class="col-sm-4 col-sm-offset-4">
-    <form action="/posts/new" method="post">
-      <legend>New Post</legend>
-      <br>
-      <div class="form-group">
-        <label for="post-title">Title</label>
-        <br>
-        <input type="text" name="title" class="form-control" id="post-title" placeholder="Title">
-      </div>
-      <br>
-      <div class="form-group">
-        <label for="post-url">Url</label>
-        <br>
-        <input type="url" name="url" class="form-control" id="post-url" placeholder="https://www.google.com">
-      </div>
-      <br>
-      <div class="form-group">
-        <label for="post-summary">Summary</label>
-        <br>
-        <textarea name="summary" class="form-control" id="post-summary" placeholder="Summary"></textarea>
-      </div>
-      <br>
-      <div class='text-right'>
-        <button type="submit" class="btn btn-primary">Create Post</button>
-      </div>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-    </form>
-  </div>
-</div> --}}
-
 <div class="container">
 
   <div class="left-section">
@@ -41,14 +6,32 @@
   </div>
   <div class="center-section">
 
-    <h1> Welcome to your Account! </h1>
-    <form action="/post" method="POST">
-      <input type="text" name="title">
-      <input type="text" name="url">
-      <textarea name="summary" rows="6" cols="50"></textarea>
-      <button>Submit Post</button>
-    </form>
+    <h1 style="text-align: center;"> Welcome to your Account! </h1>
+    
+    <div class="profile-container">
 
+        <h3 style="text-align: center; margin-bottom:50px">Make a Post</h3>
+
+        <form action="/post" method="POST">
+          <label>
+            <span class="text">Title:</span>
+          </label>
+          <input type="text" name="title" style="margin: 0px 50px 25px 0px;">
+          <label>
+            <span class="text">Links:</span>
+          </label>
+          <input type="text" name="url">
+          <br>
+          <label>
+            <span class="text" style="margin-top:50px;">What is on your mind?</span>
+          </label>
+          <br>
+          <textarea name="summary" rows="6" cols="50"></textarea>
+          <br>
+          <button>Submit Post</button>
+        </form>
+    
+    </div>
 
   </div>
   <div class="right-section">

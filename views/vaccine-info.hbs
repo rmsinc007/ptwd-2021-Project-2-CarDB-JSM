@@ -6,13 +6,17 @@
         <h1 class="h1-Vacc-Info">FDA Approved and Non-FDA-Approved Vaccines</h1>
 
         {{#each this}}
-        <h3>
-            {{name}}
-        </h3>
-        <a href={{url}} target="_blank">
-            <button>Read More</button>
-        </a>
-        <button>Save Article</button>
+
+            {{#if name}}
+                <h3>
+                    {{name}}
+                </h3>
+                <a href={{url}} target="_blank">
+                    <button>Read More</button>
+                </a>
+                <button>Save Article</button>
+            {{/if}}
+
         {{/each}}
     </div>
     <div class="right-section">

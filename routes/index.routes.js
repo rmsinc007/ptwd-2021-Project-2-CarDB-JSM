@@ -5,7 +5,7 @@ const User   = require("../models/login.model.js");
 const bcrypt  = require("bcryptjs");
 
 /*GET home page */
-router.get("/", (req, res, next) => {
+router.get("/login", (req, res, next) => {
     //console.log(req.query);
     res.render("login");
 });

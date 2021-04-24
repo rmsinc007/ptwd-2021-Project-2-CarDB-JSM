@@ -6,27 +6,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="icon" type="image/png" href="../public/images/vaccine.png">
-    <title>COVID NEWS ONLINE</title>
+    <link rel="icon" type="image/png" href="/images/vac-shot.png">
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li><a href="/news">COVID NEWS ONLINE </a></li>
-            <li><a href="/signup"> Sign Up </a></li>
-            <li><a href="/"> Login </a></li>
-            <li><a href="/infections"> Profile </a></li>
-            <li><a href="/vacc-info"> Vaccines </a></li>
-            <li><a href="/support"> Post </a></li>
-        </ul>
-    </nav>
+    
+    <div class="nav-bar">
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">
+                        <span class="nav-text">HOME</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/news">
+                        <span class="nav-text">NEWS ONLINE</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/signup">
+                        <span class="nav-text">SIGN UP</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="/login"> 
+                        <span class="nav-text">LOGIN</span>
+                    </a>
+                </li>
+                {{!-- <li>
+                    <a href="/infections"> 
+                        <span class="nav-text">PROFILE</span>
+                    </a>
+                </li> --}}
+                <li>
+                    <a href="/vacc-info">
+                         <span class="nav-text">VACCINES</span>
+                     </a>
+                </li>
+                {{!-- <li>
+                    <a href="/support">
+                         <span class="nav-text">POST</span>
+                    </a>
+                </li> --}}
+            </ul>
+        </nav>
+    
+    </div>
 
     <main>
         {{{body}}}
     </main>
     <footer>
-        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
+        <div style="text-align: center; margin-top: 300px">Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
                 href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
     </footer>
 </body>
