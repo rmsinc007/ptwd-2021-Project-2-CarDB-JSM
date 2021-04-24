@@ -12,7 +12,7 @@ router.post("/post", (req, res, next) => {
     summary: req.body.summary
   }).then(() => {
     const sucessMessage = {message: "You have posted successfully!"}
-    res.render('profile' , sucessMessage);
+    res.redirect('/post');
   }).catch((err) => {
     console.log(err);
   });
@@ -21,22 +21,9 @@ router.post("/post", (req, res, next) => {
 router.get('/post', (req, res, next) => {
   Post.find().then((bunchaPosts) => {
     console.log(bunchaPosts)
-    res.render('profile', { post: bunchaPosts });
+    res.render('profile', { posts: bunchaPosts });
   });
 });
-
-
-// app.post('/delete-cat/:idofcat', (req, res, next) => {
-//   const id = req.params.idofcat;
-//   Cat.findByIdAndDelete(id)
-//     .then(() => {
-//       console.log('success');
-//       res.redirect('/cats');
-//     })
-//     .catch((err) => {
-//       console.log('error', err);
-//     });
-// });
 
   
   console.log("Post route worked");
