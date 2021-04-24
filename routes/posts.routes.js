@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Post = require('../models/Posts.model');
+//const Popup = require('popups');
 
 //route for posts
 
@@ -11,7 +12,7 @@ router.post("/post", (req, res, next) => {
     url: req.body.url,
     summary: req.body.summary
   }).then(() => {
-    const sucessMessage = {message: "You have posted successfully!"}
+    //Popup.alert({ content: 'You have successfully posted!'})
     res.redirect('/post');
   }).catch((err) => {
     console.log(err);
@@ -21,7 +22,7 @@ router.post("/post", (req, res, next) => {
 router.get('/post', (req, res, next) => {
   Post.find().then((bunchaPosts) => {
     console.log(bunchaPosts)
-    res.render('profile', { posts: bunchaPosts });
+    res.render('post-history', { posts: bunchaPosts });
   });
 });
 
