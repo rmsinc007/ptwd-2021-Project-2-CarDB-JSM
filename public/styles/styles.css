@@ -56,3 +56,11 @@ nav a {
   margin-top: 80px;
 
 }
+
+.post-history-card{
+
+  border: 2px solid black;
+  padding: 80px;
+  margin: 25px 0px 25px 0px;
+
+}

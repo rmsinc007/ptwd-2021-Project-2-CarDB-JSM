@@ -3,11 +3,44 @@
 
     </div>
     <div class="center-section">
+
+        <h1>Post History</h1>
+
         {{#each this}}
-            {{title}}
-            {{url}}
-            {{summary}}
+
+            {{#if this}}
+
+
+                <div class="post-history-card">
+                    
+                   <label>
+                        <span class="text">Title:</span>
+                    </label>
+                    {{title}}
+                    <br>
+
+                    <label>
+                        <span class="text">Url:</span>
+                    </label>
+                    {{url}}
+                    <br>
+                    
+                    <label>
+                        <span class="text">Summary:</span>
+                    </label>
+                    {{summary}}
+                    <br>
+                    <br>
+                    <a href="#">
+                        <button>Delete Post</button>
+                    </a>
+
+                </div>
+            
+            {{/if}}
+        
         {{/each}}
+    
     </div>
     <div class="right-section">
 

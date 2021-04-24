@@ -22,7 +22,7 @@ router.post("/post", (req, res, next) => {
 router.get('/post', (req, res, next) => {
   Post.find().then((bunchaPosts) => {
     console.log(bunchaPosts)
-    res.render('post-history', { posts: bunchaPosts });
+    res.render('post-history', bunchaPosts);  //{ posts: bunchaPosts }
   });
 });
 
