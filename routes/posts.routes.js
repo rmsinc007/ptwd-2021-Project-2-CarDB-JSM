@@ -19,6 +19,7 @@ router.post("/post", (req, res, next) => {
   });
 });
 
+//Get all post
 router.get('/post', (req, res, next) => {
   Post.find().then((bunchaPosts) => {
     console.log(bunchaPosts)
@@ -27,7 +28,7 @@ router.get('/post', (req, res, next) => {
 });
 
 //DELETE
-router.post('/delete-post/:idofpost', (req, res, next) => {
+router.get('/:idofpost', (req, res, next) => {
   const id = req.params.idofpost;
   Post.findByIdAndDelete(id)
     .then(() => {
@@ -64,7 +65,7 @@ router.post('/update-post/:id', (req, res, next)=>{
  })
 })
   
-console.log("Post route worked");
+//console.log("Post route worked");
   
   
 
